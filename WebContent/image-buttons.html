@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+body{
+    background-color: #ddFFFF;
+}
+
+h2{
+    border-left: solid gray 10px;
+    border-bottom: solid gray 2px;
+}
+
+h3 {
+    border-bottom: solid gray 1px;
+}
+
+.image-size {
+    height: 30px;
+    width: 150px;
+}
+.image-button {
+	background-image: url("./image/button_nomal.png");
+	border: none;
+}
+
+.image-button:hover {
+	background-image: url("./image/button_hover.png");
+}
+
+.image-button:active {
+    background-image: url("./image/button_active.png");
+    widht:200px;
+}
+
+.image-button[disabled] {
+	background-image: url("./image/button_disabled.png");
+}
+</style>
+</head>
+<body>
+	<h1>画像ボタン</h1>
+	   <h2>input[type=submit]</h2>
+    <h3>inputタグのCSSで背景画像を設定</h3>
+    <input type="submit" class="image-button image-size" value="サイズ指定" />
+    <input type="submit" class="image-button image-size" value="サイズ指定 disabled" disabled="disabled" />
+    <input type="submit" class="image-button" value="サイズ未指定" />
+    <input type="submit" class="image-button" value="disabled" disabled="disabled" />
+    <ul>
+       <li>表示テキスト:valueの値</li>
+       <li>サイズ指定:必要</li>
+       <li>背景色透過:NG</li>
+       <li>hover:OK</li>
+       <li>active:OK(IE7はNG)</li>
+       <li>disabled:OK</li>
+    </ul>
+	<h2>input[type=image]</h2>
+	<input type="image" src="./image/button_nomal.png" class="image-button" value="button" />
+	<input type="image" src="./image/button_nomal.png" class="image-button" value="button" disabled="disabled"　/>
+	   <ul>
+       <li>表示テキスト:なし（画像）</li>
+       <li>サイズ指定:不要</li>
+       <li>背景色透過:OK</li>
+       <li>hover:NG</li>
+       <li>active:NG</li>
+       <li>disabled:NG</li>
+    </ul>
+	<h2>button</h2>
+	<h3>buttonタグ内に画像を配置</h3>
+	<button value="button">
+		<img src="./image/button_nomal.png">
+	</button>
+	<ul>
+       <li>普通のボタン枠が表示されるためNG</li>
+    </ul>
+	<h3>buttonタグのCSSで背景画像を設定</h3>
+	<button value="value" class="image-button image-size">サイズ指定</button>
+    <button value="button" class="image-button image-size" disabled="disabled">サイズ指定 disabled</button>
+	<button value="value" class="image-button">サイズ未指定</button>
+	<button value="button" class="image-button" disabled="disabled">disabled</button>
+	<ul>
+	   <li>表示テキスト:タグ内の値</li>
+	   <li>サイズ指定:必要</li>
+	   <li>背景色透過:NG</li>
+	   <li>hover:OK</li>
+	   <li>active:OK(IE7はNG)</li>
+       <li>disabled:OK</li>
+	</ul>
+</body>
+</html>
